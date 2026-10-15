@@ -1,6 +1,9 @@
 #! namespace UtilE class UEditor
 const BACKPORTED = 100
 
+# TODO decide if this belongs here...
+const EdNodeRef = preload("uid://rcceanby83e4") #! resolve EditorNodes.EditorNodeRef
+
 enum ToastSeverity{
 	INFO,
 	WARNING,
@@ -49,7 +52,7 @@ static func edited_scene_get_node(node_path:NodePath):
 
 static func get_current_scene_path():
 	var open_scenes = EditorInterface.get_open_scenes()
-	var scene_tabs = EditorNodeRef.get_registered(EditorNodeRef.Nodes.SCENE_TABS)
+	var scene_tabs = EdNodeRef.get_registered(EdNodeRef.Nodes.SCENE_TABS)
 	var tab_bar = scene_tabs.get_child(0).get_child(0).get_child(0) as TabBar
 	var current_tab_name = tab_bar.get_tab_title(tab_bar.current_tab)
 	for scene_path in open_scenes:
