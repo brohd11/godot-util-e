@@ -3,6 +3,7 @@ extends "res://addons/_lib/singleton/src/singleton_base.gd" #! ext Singletons.Ba
 
 const Debounce = preload("res://addons/_lib/util_r/src/signal/debounce.gd")
 
+#! gdp-strip-cast PE_STRIP_CAST_SCRIPT
 const PE_STRIP_CAST_SCRIPT = preload("res://addons/_lib/util_e/src/editor_debounce.gd")
 static func get_singleton_name() -> String:
 	return "EditorDebounce"
