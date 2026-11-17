@@ -1,5 +1,4 @@
 #! namespace UtilE class UEditor
-const BACKPORTED = 100
 
 # TODO decide if this belongs here...
 const EdNodeRef = preload("uid://rcceanby83e4") #! resolve EditorNodes.EditorNodeRef
@@ -11,10 +10,9 @@ enum ToastSeverity{
 }
 static func push_toast(message, severity:ToastSeverity=ToastSeverity.INFO, print=true):
 	var sev = severity #as int
-	if BACKPORTED >= 4:
-		EditorInterface.get_editor_toaster().push_toast(message, sev)
+	EditorInterface.get_editor_toaster().push_toast(message, sev)
 	
-	if print == true or BACKPORTED < 4:
+	if print == true:
 		if sev == 0:
 			print(message)
 		elif sev == 1:
