@@ -36,5 +36,4 @@ static func debouncing(key:Variant):
 	return get_instance()._debounce_node._current_debounces.has(key)
 
 static func start_debounce(key:Variant, type:DebounceType=DebounceType.FRAME, time:=1) -> bool:
-	print(get_instance().get_script())
 	return get_instance()._debounce_node.start_debounce(key, type as int, time)
